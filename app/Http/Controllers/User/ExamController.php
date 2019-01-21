@@ -33,7 +33,12 @@ class ExamController extends Controller
         }
 
         $file_name = $file->getClientOriginalName();
-        $file->storeAs(date('Ymd'),$file_name);
+        $rs = $file->storeAs(date('Ymd'),$file_name);
+
+        var_dump($rs);die;
+        if($rs){
+           echo '上传成功';
+        }
 
     }
 
